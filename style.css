@@ -11,7 +11,7 @@
   --safe-bottom: var(--safe-area-inset-bottom, env(safe-area-inset-bottom, 0px));
 }
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-html, body { width: 100%; height: 100%; overflow: hidden; }
+html, body { width: 100%; height: 100%; overflow: hidden; touch-action: pan-x pan-y; }   /* 页面不许双指放大，列表照常滑 */
 body {
   background:
     radial-gradient(120% 70% at 50% 42%, #f2fbfb 0%, var(--cream) 55%, var(--cream2) 100%);
@@ -21,7 +21,7 @@ body {
   user-select: none; -webkit-user-select: none;
 }
 #stage { position: fixed; inset: 0; }
-#world { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+#world { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }   /* 地图上的手势全归游戏 */
 #ui { position: absolute; inset: 0; pointer-events: none; display: flex; justify-content: center; }
 .column {
   width: 100%; max-width: 480px; height: 100%;
